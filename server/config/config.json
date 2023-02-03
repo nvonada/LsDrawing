@@ -3,6 +3,7 @@
     "username": "LsDrawing",
     "password": "Needtodosomethingaboutthis42",
     "database": "LsDrawing",
+    "logging": true,
     "host": "127.0.0.1",
     "port": "1433",
     "dialect": "mssql",
