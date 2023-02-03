@@ -7,7 +7,12 @@ module.exports = (sequelize, DataTypes) => {
         CategoryName: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        Disabled: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
         }
     });
+
     return Categories;
 }

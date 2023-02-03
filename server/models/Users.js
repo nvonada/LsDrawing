@@ -12,27 +12,22 @@ module.exports = (sequelize, DataTypes) => {
         CanChangeUsers: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
-            defaultValue: false
         },
         CanChangeEvents: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
-            defaultValue: false
         },
         CanChangeWinners: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
-            defaultValue: false
         },
         NotAllowed: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
-            defaultValue: false
         },
         IsDeliveryContact: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
-            defaultValue: false
         }
     });
     return Users;
