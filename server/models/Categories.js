@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
     const Categories = sequelize.define("Categories", {
         CategoryName: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
         },
         Disabled: {
             type: DataTypes.BOOLEAN,
