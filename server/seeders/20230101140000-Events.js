@@ -3,8 +3,9 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    return queryInterface.sequelize.query(
-      "SELECT TOP 1 id FROM Categories")
+    return queryInterface.sequelize
+      .query(
+        "SELECT TOP 1 id FROM Categories")
       .then(data => {
         const externalId = data[0];
         const seedData = externalId.map(row => {
