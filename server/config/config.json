@@ -4,12 +4,13 @@
     "password": "Needtodosomethingaboutthis42",
     "database": "LsDrawing",
     "logging": true,
-    "host": "127.0.0.1",
+    "host": "localhost",
     "port": "1433",
     "dialect": "mssql",
     "dialectOptions": {
       "options": {
-        "instanceName": "SQLEXPRESS"
+        "instanceName": "SQLEXPRESS",
+        "requestTimeout": 3000
       }
     }
   },

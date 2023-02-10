@@ -4,10 +4,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        CategoryName: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         Disabled: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
