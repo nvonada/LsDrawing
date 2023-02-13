@@ -12,20 +12,21 @@ module.exports = {
         "SELECT TOP 1 UserName FROM Users", { type: QueryTypes.SELECT }
     );
     
-    console.log(eventRow);
-    console.log(userRow);
-    const eventId = eventRow.map(row => { return row.id });
-    const userName = userRow.map(row => { return row.UserName });
+    const eventId = eventRow.map(row => { return row.id })[0];
+    const userName = userRow.map(row => { return row.UserName })[0];
+    console.log(eventId);
+    console.log(userName);
 
-    const seedData = () => {
-      return {
+    // Must be an array
+    const seedData = [{
         Year: 2023,
         EventId: eventId,
         User: userName,
         createdAt: new Date(),
         updatedAt: new Date()
-      };
-    };
+    }];
+
+    console.log(seedData);
 
     await queryInterface.bulkInsert("Entries", seedData, {});
   },

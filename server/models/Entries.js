@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         DrawingRank: {
             type: DataTypes.DOUBLE,
-            allowNull: false
+            allowNull: true
         }
     });
 
