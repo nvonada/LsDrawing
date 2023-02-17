@@ -4,6 +4,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        DefaultNumberOfWinners: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         Disabled: {
             type: DataTypes.BOOLEAN,
             allowNull: false,

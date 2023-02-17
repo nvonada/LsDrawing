@@ -5,6 +5,7 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     return queryInterface.bulkInsert("Categories", [{
       CategoryName: "CBJ Games",
+      DefaultNumberOfWinners: 2,
       Disabled: false,
       createdAt: new Date(),
       updatedAt: new Date(),
