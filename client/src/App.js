@@ -1,26 +1,18 @@
 import './App.css';
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from "./pages/Home";
+import Categories from "./pages/Categories";
 
-
-function App() {
-
-  const [listOfCategories, setListOfCategories] = useState([]);
-  useEffect(UseEffectCallback, []);
-  
-  return (
-    <div className="App">
-      {listOfCategories.map((value, key) => { return <div> {value.CategoryName} </div>})}
-    </div>
-  );
-
-  function UseEffectCallback()
-  {
-    console.log("Effect called");
-    axios.get("http://localhost:3001/categories").then((response) => {
-    setListOfCategories(response.data);
-    });
-  }
+function App()
+{
+  return (<div className='App'>
+    <Router>
+      <Routes>
+        <Route path="/" exact element={<Home/>}/>
+        <Route path="/Categories" exact element={<Categories/>}/>
+      </Routes>
+    </Router>
+  </div>);
 }
 
 export default App;
