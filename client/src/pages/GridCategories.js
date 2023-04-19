@@ -1,15 +1,18 @@
 import React from 'react'
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { DataGrid, GridColDef, GridRowsProp } from '@mui/x-data-grid';
 
 
 function GridCategories() 
 {
     const [listOfCategories, setListOfCategories] = useState([]);
     useEffect(UseEffectCallback, []);
+
     return (
-      <div className="categories">
-        {listOfCategories.map(CategoriesDisplay)}
+      <div className="pageDiv">
+        <h1>Drawing Categories</h1>
+        {BuildDataGrid(listOfCategories)}
       </div>
     );
 
@@ -23,18 +26,21 @@ function GridCategories()
   }
 }
 
-function CategoriesDisplay(value, key)
+function BuildDataGrid(dataList)
 {
-  const status = value.Disabled ? "Disabled" : "Enabled";
-  const plural = value.DefaultNumberOfWinners > 1 ? "s" : "";
-  const recordDivs = (
-    <div className="category">
-        <div className='category_name'>{value.CategoryName}</div>
-        <div className='category_num_winners'>{value.DefaultNumberOfWinners} winner{plural}</div>
-        <div className='category_status'>{status}</div>
-    </div>);
+  const columns: GridColDef[] = [
+    { field: 'CategoryName', headerName: 'Name', width: 250 },
+    { field: 'DefaultNumberOfWinners', headerName: '# Winners', width: 100 },
+    { field: 'Disabled', headerName: 'Disabled', width: 80 }
+  ];
 
-  return recordDivs;
+  const grid = (
+    <div style={{ height: 300, width: '100%' }}>
+      <DataGrid rows={dataList} columns={columns} />
+    </div>
+  );
+
+  return grid;
 }
 
 export default GridCategories
