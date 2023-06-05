@@ -29,14 +29,14 @@ function GridCategories()
 function BuildDataGrid(dataList)
 {
   const columns: GridColDef[] = [
-    { field: 'CategoryName', headerName: 'Name', width: 250 },
-    { field: 'DefaultNumberOfWinners', headerName: '# Winners', width: 100 },
-    { field: 'Disabled', headerName: 'Disabled', width: 80 }
+    { field: 'CategoryName', headerName: 'Name', width: 250, editable: true },
+    { field: 'DefaultNumberOfWinners', headerName: '# Winners', width: 100, editable: true },
+    { field: 'Disabled', headerName: 'Disabled', width: 80, editable: true }
   ];
 
   const grid = (
-    <div style={{ height: 300, width: '100%' }}>
-      <DataGrid rows={dataList} columns={columns} />
+    <div style={{ height: 300, width: "500px", marginLeft: "20px"  }}>
+      <DataGrid rows={dataList} columns={columns} editMode="row" />
     </div>
   );
 
